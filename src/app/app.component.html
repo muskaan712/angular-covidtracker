@@ -1,0 +1,140 @@
+
+<section id="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-expand-md fixed-top" style="background-color:	#5e0087;">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-bar">
+            <span class="navbar-toggler-icon" style="color: floralwhite">&#9776;</span>
+          </button>
+
+          <a class="navbar-brand" href="#">
+            <i class="fas fa-home" style="font-size: 1em; color: floralwhite;"></i>
+          </a>
+
+          <div class="collapse navbar-collapse" id="navigation-bar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link neon" href="#statistic">STATISTICS</a></li>
+              <li class="nav-item"><a class="nav-link neon" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"target="_blank">WHO</a></li>
+              <li class="nav-item"><a class="nav-link neon" href="https://www.mygov.in/covid-19/"target="_blank">#IND_Fights_Corona</a></li>
+              <li class="nav-item"><a class="nav-link neon" href="#footer">CONTACT</a></li>
+
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="h1-title">[ COVID-19 ]</h1>
+        <p class="text-center">
+          Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+          Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="statistic">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col text-left">
+        <h2>STATISTIC</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center mb-3">
+        <form>
+          <div class="form-group">
+            <select (change)="countryChanged($event.target.value)" class="form-control" id="country">
+              <option selected value="global">Global</option>
+              <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 md-3">
+        <div class="card card-infected">
+          <div class="card-body">
+            <h3 class="card-title">INFECTED</h3>
+            <p class="card-text" [countUp]="data.confiremd">{{data.confiremd | number}}</p>
+            <p>{{data.lastupdate | date:'longDate'}}</p>
+            <p>Number of active cases of COVID-19</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 md-3">
+        <div class="card card-recovered">
+          <div class="card-body">
+            <h3 class="card-title">RECOVERED</h3>
+            <p class="card-text" [countUp]="data.recovered">{{data.recovered | number}}</p>
+            <p>{{data.lastupdate | date:'longDate'}}</p>
+            <p>Number of recovered cases of COVID-19</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 md-3">
+        <div class="card card-deaths">
+          <div class="card-body">
+            <h3 class="card-title">DEATHS</h3>
+            <p class="card-text" [countUp]="data.deaths">{{data.deaths | number}}</p>
+            <p>{{data.lastupdate | date:'longDate'}}</p>
+            <p>Number of deaths cases of COVID-19</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="graph">
+  <div class="container">
+    <div class="row">
+      <div class="col chart-wrapper">
+        <canvas *ngIf="global" baseChart
+          [chartType]="lineChartType"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+        >
+        </canvas>
+        <canvas *ngIf="!global" baseChart
+          [chartType]="barChartType"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6">
+        <h3>About Project</h3>
+        <p>This is a Covid-19 Tracker built with <a href="https://cli.angular.io/"target="_blank"><em><strong><u>Angular cli</u></strong></em></a> It uses API key to fetch data and updates daily accordingly.</p>
+
+
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <h3>Useful Links</h3>
+        <ul class="list-unstyled">
+          <li><p><strong><i class="fas fa fa-github"></i></strong><a href="#"target="_blank"> Covid-19 Tracker</a></p></li>
+          <li><p><strong><i class="fas fa fa-envelope"></i> </strong> <a href="#"> co19342@ccet.ac.in</a></p></li>
+          <li><p><strong><i class="fas  fa fa-linkedin"></i> </strong> <a href="https://www.linkedin.com/in/muskaan-chopra-015bb51a0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BmsijmTUpTSyLpQ6cMpvqqA%3D%3D"target="_blank"> Muskaan Chopra</a></p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+body, html {
+  height: 100%;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: lightslategray;
+}
+
+@media(max-width: 768px) {
+  #header img {
+    margin: 0 auto;
+  }
+}
+
+#navigation .navbar {
+  border-bottom: 1px solid rgba(128, 0, 128, 0.082);
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+#navigation .navbar a {
+  color: floralwhite;
+}
+/*#navigation .navbar a:hover {
+  color: red;
+}*/
+.neon{
+
+  margin-top: 5px;
+  border: 2px solid floralwhite;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 1.5s;
+
+}
+.neon:hover{
+  box-shadow: 0px 5px 25px 0px floralwhite inset, 0px 5px 25px 0px floralwhite,
+             0px 5px 25px 0px floralwhite inset, 0px 5px 25px 0px floralwhite;
+}
+
+#header {
+  background: url('assets/images/background.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: purple;
+  display: flex;
+  align-items: center;
+}
+#header .h1-title {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#statistic {
+  padding: 5rem 0;
+}
+#statistic .card-text {
+  font-weight: bold;
+  font-size: 50px;
+  color: tomato;
+}
+#statistic .card-infected {
+  border-bottom-color: lightskyblue;
+  border-bottom-width: 10px;
+}
+#statistic .card-recovered {
+  border-bottom-color: lightgreen;
+  border-bottom-width: 10px;
+}
+#statistic .card-deaths {
+  border-bottom-color: lightsalmon;
+  border-bottom-width: 10px;
+}
+
+
+#footer {
+  padding: 2rem 0;
+  background-color: rebeccapurple;
+  color: floralwhite;
+}
+
+#footer a {
+  color: floralwhite;
+}
+#footer a:hover {
+  color: plum;
+  transition: all 0.1s ease-in-out;
+}
+#footer .fas {
+  padding: 5px;
+}
